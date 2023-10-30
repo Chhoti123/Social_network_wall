@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="form-container">
+        <div class="title">
+            Create an Account
+        </div>
+        <form [formGroup]="registrationForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your username</mat-label>
+                <input matInput formControlName="username"/>
+                <mat-error *ngIf="registrationForm.controls.username.invalid">
+                   {{registrationForm.controls.username.hasError('required')?'UserName is required':"Name must be greater than 5"}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your email</mat-label>
+                <input matInput formControlName="email"/>
+                <mat-error *ngIf="registrationForm.controls.email.invalid">
+                   {{registrationForm.controls.email.hasError('required')?'Email is required': 'Email must have @'}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your password</mat-label>
+                <input type="password" matInput formControlName="password"/>
+                <mat-error *ngIf="registrationForm.controls.password.invalid">
+                    {{registrationForm.controls.password.hasError('required')?'passwordis required':'password must have more than 5 word'}}
+                </mat-error>
+            </mat-form-field>
+        </form>
+        {{registrationForm.value | json}}
+        <div class="buttons-container">
+            <button mat-raised-button >Create an account</button>          
+            <p>Or</p>
+            <button mat-raised-button routerLink="/login">Login</button>
+
+        </div>
+    </div>
+</div>

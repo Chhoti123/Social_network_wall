@@ -9,11 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './pages/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     LoginComponent,
+    RegistrationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,10 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

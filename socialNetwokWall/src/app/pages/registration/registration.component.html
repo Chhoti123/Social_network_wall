@@ -26,9 +26,9 @@
                 </mat-error>
             </mat-form-field>
         </form>
-        {{registrationForm.value | json}}
+        <!-- {{registrationForm.value | json}} -->
         <div class="buttons-container">
-            <button mat-raised-button >Create an account</button>          
+            <button mat-raised-button  (click) = 'create()' [disabled] = 'registrationForm.invalid'>Create an account</button>          
             <p>Or</p>
             <button mat-raised-button routerLink="/login">Login</button>
 

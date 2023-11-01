@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-
+  user:any;
   public creatNewUser(dataObj: any){
     return new Promise((resolve, reject)=>{
       this.http.post('http://localhost:3000/users',dataObj)     //=>This will return obserable so that's why we use .subscribe and subscribe use two parameter
@@ -21,8 +21,21 @@ export class UserService {
         }
       )
     })
+
   }
 //now let's call this function in  registration(create Account)
+public getUser(email:any){
+  return new Promise((resolve, reject) =>{
+    this.http.get('http://localhost:3000/users?email='+email).subscribe(
+      (res) => {
+         resolve(res)
+      },
+      (err) =>{
+        reject(err)
+      }
+    )
+  })
+}
 
 
 }

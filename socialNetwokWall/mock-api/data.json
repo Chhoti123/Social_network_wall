@@ -1,4 +1,23 @@
 {
-    "users":[],
-    "posts":[]
+  "users": [
+    {
+      "username": "shwetashu",
+      "email": "shwetashu78@gmail.com",
+      "password": "shwetashu&123",
+      "id": 1
+    },
+    {
+      "username": "shweta",
+      "email": "shweta@gmail.com",
+      "password": "shweta@123",
+      "id": 2
+    },
+    {
+      "username": "johan123",
+      "email": "johan@gmail.com",
+      "password": "johan@123",
+      "id": 3
+    }
+  ],
+  "posts": []
 }
